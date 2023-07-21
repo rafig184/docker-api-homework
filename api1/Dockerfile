@@ -4,7 +4,7 @@ WORKDIR /usr/app
 RUN npm install -g ts-node
 COPY src /usr/app/src
 COPY package*.json /usr/app
-# COPY .env /usr/app/.env
+COPY .env /usr/app/.env
 # COPY tsconfig.json /usr/app
 
 RUN npm install 

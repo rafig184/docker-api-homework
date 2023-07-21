@@ -1,9 +1,10 @@
 import axios from "axios";
 import express, { Request, Response, NextFunction } from "express"
+import dotenv from "dotenv"
 
-
+dotenv.config()
 const app = express();
-const port = 4100
+// const port = 4100
 
 app.get("/health-check", async function (req: Request, res: Response, next: NextFunction) {
     try {
@@ -18,8 +19,8 @@ app.get("/health-check", async function (req: Request, res: Response, next: Next
 })
 
 
-app.listen(port, () => {
-    console.log({ message: `Api is running on Port ${port}` });
+app.listen(process.env.PORT, () => {
+    console.log({ message: `Api is running on Port ${process.env.PORT}` });
 })
 
 
